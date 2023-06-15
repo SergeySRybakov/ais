@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <img class="logo" src="https://static.tildacdn.com/tild3735-3634-4732-b964-383232636162/dpp-logo-white-strin.png" imgfield="img" alt="Дежурный по планете">
+            <ul class="navigator">
+                <li class="navLi"><a href="default.asp">Home</a></li>
+                <li class="navLi"><a href="news.asp">News</a></li>
+                <li class="navLi"><a href="contact.asp">Contact</a></li>
+                <li class="navLi"><a href="about.asp">About</a></li>
+              </ul>
+        </nav>
+    </header>
+
+    <div class="BigCont">
+        <div class="container SelectorCont">
+            <form class="container-form" action="./api/index.php">
+                <div class="select">
+                    <p class="selector-div-txt">Get info by</p>
+                    <div class="selector-div">
+                        <select id="selector" class="selector" name="option" id="option">
+                            <option value="mmsi">mmsi</option>
+                            <option value="name">name</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input class="input" type="text" id="optionInput" name="option" placeholder="Your option">
+                <input id="submit" type="submit" value="Submit">
+            </form>
+            <img class="img_our_logo" src="./img/image2.png" alt="">
+            <img class="img_our_logo" style="border-radius: 10px;" src="./img/image.png" alt="">
+        </div>
+        <div class="container VesselInfo">
+            <ul>
+                <p class="vessel-li">mmsi: </p>
+                <p class="vessel-li">lat: </p>
+                <p class="vessel-li">lon: </p>
+                <p class="vessel-li">Vessel name: </p>
+                <p class="vessel-li">message id: </p>
+                <p class="vessel-li">communication status: </p>
+                <p class="vessel-li">navigation status: </p>
+                <p class="vessel-li">cog: </p>
+                <p class="vessel-li">sog: </p>
+                <p class="vessel-li">accuracy: </p>
+                <p class="vessel-li">raim: </p>
+                <p class="vessel-li">turn: </p>
+                <p class="vessel-li">repeater: </p>
+                <p class="vessel-li">spare: </p>
+                <p class="vessel-li">manoeuvre: </p>
+                <p class="vessel-li">heading: </p>
+                <p class="vessel-li">valid: </p>
+                <p class="vessel-li">time: </p>
+            </ul>
+            <button id="infoBtn" class="infoBtn">More info</button>
+        </div>
+    </div>
+    <div id="map"></div>
+
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
